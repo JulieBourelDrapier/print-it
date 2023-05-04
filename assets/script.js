@@ -20,7 +20,13 @@ const slides = [
 function onButtonClick (event) {
 	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
 }
-
-document.querySelector('button').forEach(button)
-	button.addEventlistener('click', onButtonClick 
+document.querySelectorAll('button').forEach(button => {
+	button.addEventlistener('click',onButtonClick) 
 })
+
+//autre essai flèche par flèche 
+//left arrow click
+arrow_left.addEventlistener('click', function(){ 
+	if (current === 0){
+		current = 
+
