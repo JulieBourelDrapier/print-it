@@ -17,61 +17,17 @@ const slides = [
 	}
 ]
 // ajout des EventListener sur les flèches 
-//function onButtonClick (event) {
-	//console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
-//}
-//document.querySelectorAll('button').forEach(button => {
-	//button.addEventlistener('click',onButtonClick) 
-//})
-
-//autre essai flèche par flèche 
-//left arrow click
-let sliderImages =
-document.querySelectorAll('banner'),
-	arrowLeft = document.querySelector('.arrow_left'),
-	arrowRight = document.querySelector('.arrow_right'),
-	current = 0;
-
-//clear all images
-function reset(){
-	for(let i = 0; i < sliderImages.length; i ++){
-		sliderImages[i].style.display = 'none';
-	}
+function onArrowClick (event) {
+	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
 }
-//initialise slider 
-function startSlide(){
-	reset();
-	sliderImages[0].style.display = 'block';
+document.querySelectorAll('arrow') {
+	arrow_left.addEventlistener('click',onArrowClick) 
+})
+
+function onArrowClick (event) {
+	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
 }
-
-//show previous
-function slideleft(){
-	reset();
-	sliderImages[current -1].style.display = 'block';
-}
-
-//show next 
-function slideRight(){
-	reset();
-	sliderImages[current + 1].style.display = 'block';
-	current ++;
-}
-
-//left arrow click
-arrowLeft.addEventlistener('click', function(){ 
-	if (current === 0){
-		current = sliderImages.lengh;
-	}
-	slideLeft();
-});
-
-//right arrow click
-arrowRight.addEventlistener('click', function(){ 
-	if (current === sliderImages.lenght -1){
-		current = -1;
-	}
-	slideRight();
-});
-
-startSlide();
+document.querySelectorAll('arrow') {
+	arrow_right.addEventlistener('click',onArrowClick) 
+})
 
