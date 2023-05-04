@@ -17,7 +17,10 @@ const slides = [
 	}
 ]
 // ajout des EventListener sur les flèches 
-const arrow = document.querySelector('button')
-button.addEventlistener('click', function() {
-	alert('Alerte')
+function onButtonClick (event) {
+	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
+}
+
+document.querySelector('button').forEach(button)
+	button.addEventlistener('click', onButtonClick 
 })
