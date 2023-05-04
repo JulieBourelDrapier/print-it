@@ -17,17 +17,4 @@ const slides = [
 	}
 ]
 // ajout des EventListener sur les flèches 
-function onArrowClick (event) {
-	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
-}
-document.querySelectorAll('arrow') {
-	arrow_left.addEventlistener('click',onArrowClick) 
-})
-
-function onArrowClick (event) {
-	console.log(event.currentTarget)//pour savoir sur quel flèche on a cliqué
-}
-document.querySelectorAll('arrow') {
-	arrow_right.addEventlistener('click',onArrowClick) 
-})
 
