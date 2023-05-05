@@ -18,15 +18,10 @@ const slides = [
 ]
 // ajout des EventListener sur les flèches 
 
-//essai console
-const dividende = 5;
-const diviseur = 0; 
-let result = dividende / diviseur;
+// raccourci commentaire sur une ligne = Ctrl + /
 
-if (result === Infinity) {
-	console.error("Erreur : On ne peut pas diviser par 0");
-} else {
-	console.log(result);
-}
-//personnaliser la console
-console.log("%cJ'ai mangé une pomme", "color : white; background-color : rgb(25,25,50); padding : 24px; font-weight: bold; font-size: 2em;")
+
+// info.JS
+let message;
+message = 'Hello';
+alert(message);
