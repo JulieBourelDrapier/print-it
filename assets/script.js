@@ -22,6 +22,5 @@ const slides = [
 
 
 // info.JS
-let message;
-message = 'Hello';
+let message = 'Hello world';
 alert(message);
