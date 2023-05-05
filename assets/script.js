@@ -1,3 +1,8 @@
+// annonce des variables 
+let slideBySlide = 0; // permer de savoir sur quelle slide je me trouve
+let 
+
+
 const slides = [
 	{
 		"image":"slide1.jpg",
