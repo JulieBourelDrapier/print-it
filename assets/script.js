@@ -1,4 +1,4 @@
-//Création du carrousel 
+//CARROUSEL 
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -19,7 +19,7 @@ const slides = [
 ]
 
 // annonce des variables à appeler pour le carrousel
-let slideBySlide = 0; // permet de savoir sur quelle slide je me trouve
+let slideIndex = 0; // permet de savoir sur quelle slide je me trouve
 
 const imgPath = './assets/images/slideshow/';
 
@@ -27,31 +27,35 @@ const banner = document.querySelector('.banner-img');
 
 const tagLine = document.querySelector('.tag-line');
 
-// annonce des variables à appeler pour les bullet points
+const dots = document.getElementsByClassName('dot');
 
 //pour faire défiler le carrousel j'utiliserai les fonctions nextSLide et previousSlide
 function nextSlide () {
-	if (slideBySlide < slides.length -1) {
-		slideBySlide++;
+	dots[slideIndex].classList.remove('dot_selected')
+	if (slideIndex < slides.length -1) {
+		slideIndex++;
 	} 
 	else {
-		slideBySlide = 0
+		slideIndex = 0
 	}
-	console.log(slideBySlide)
-	banner.setAttribute('src', imgPath + slides[slideBySlide].image);
-	tagLine.innerHTML = slides[slideBySlide].tagLine;
+	dots[slideIndex].classList.add('dot_selected')
+	console.log("1 => ", typeof slideIndex, slideIndex);
+	banner.setAttribute('src', imgPath + slides[slideIndex].image);
+	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
 
 function previousSlide () {
-	if (slideBySlide > 0) {
-		slideBySlide--;
+	dots[slideIndex].classList.remove('dot_selected')
+	if (slideIndex > 0) {
+		slideIndex--;
 	}
 	else {
-		slideBySlide = slides.length -1
+		slideIndex = slides.length -1
 	}
-	console.log(slideBySlide)
-	banner.setAttribute('src', imgPath + slides[slideBySlide].image);
-	tagLine.innerHTML = slides[slideBySlide].tagLine;
+	dots[slideIndex].classList.add('dot_selected')
+	console.log("2 => ", typeof slideIndex, slideIndex);
+	banner.setAttribute('src', imgPath + slides[slideIndex].image);
+	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
 
 
@@ -62,6 +66,5 @@ let rightArrow = document.querySelector('.arrow_right');//pr la récup
 rightArrow.addEventListener('click', nextSlide);// clic
 
 
-// raccourci commentaire sur une ligne = Ctrl + /
 
-
+// raccourci commentaire sur une ligne = "Ctrl + /"
