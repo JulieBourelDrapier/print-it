@@ -37,7 +37,6 @@ function goNextSlide () {
 		slideIndex = 0
 	}
 	dots[slideIndex].classList.add('dot_selected')
-	console.log("1 => ", typeof slideIndex, slideIndex);
 	banner.setAttribute('src', imgPath + slides[slideIndex].image);
 	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
@@ -51,7 +50,6 @@ function goPreviousSlide () {
 		slideIndex = slides.length -1
 	}
 	dots[slideIndex].classList.add('dot_selected')
-	console.log("2 => ", typeof slideIndex, slideIndex);
 	banner.setAttribute('src', imgPath + slides[slideIndex].image);
 	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
@@ -60,6 +58,3 @@ function goPreviousSlide () {
 leftArrow.addEventListener('click', goPreviousSlide);
 rightArrow.addEventListener('click', goNextSlide);
 
-
-
-// raccourci commentaire sur une ligne = "Ctrl + /"
