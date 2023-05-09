@@ -1,4 +1,4 @@
-//CARROUSEL 
+// Carrousel 
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -18,19 +18,17 @@ const slides = [
 	}
 ]
 
-// annonce des variables à appeler pour le carrousel
-let slideIndex = 0; // permet de savoir sur quelle slide je me trouve
+// annonce des variables
+let slideIndex   = 0; // permet de savoir sur quelle slide je me trouve
+const imgPath    = './assets/images/slideshow/';
+const banner     = document.querySelector('.banner-img');
+const tagLine    = document.querySelector('.tag-line');
+const dots       = document.getElementsByClassName('dot');
+const leftArrow  = document.querySelector('.arrow_left');//pr la récup
+const rightArrow = document.querySelector('.arrow_right');//pr la récup
 
-const imgPath = './assets/images/slideshow/';
-
-const banner = document.querySelector('.banner-img');
-
-const tagLine = document.querySelector('.tag-line');
-
-const dots = document.getElementsByClassName('dot');
-
-//pour faire défiler le carrousel j'utiliserai les fonctions nextSLide et previousSlide
-function nextSlide () {
+// annonce des fonctions 
+function goNextSlide () {
 	dots[slideIndex].classList.remove('dot_selected')
 	if (slideIndex < slides.length -1) {
 		slideIndex++;
@@ -44,7 +42,7 @@ function nextSlide () {
 	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
 
-function previousSlide () {
+function goPreviousSlide () {
 	dots[slideIndex].classList.remove('dot_selected')
 	if (slideIndex > 0) {
 		slideIndex--;
@@ -58,12 +56,9 @@ function previousSlide () {
 	tagLine.innerHTML = slides[slideIndex].tagLine;
 }
 
-
-// ajout des EventListener sur les flèches 
-let leftArrow = document.querySelector('.arrow_left');//pr la récup
-leftArrow.addEventListener('click', previousSlide);// clic
-let rightArrow = document.querySelector('.arrow_right');//pr la récup
-rightArrow.addEventListener('click', nextSlide);// clic
+// ajout des EventListener 
+leftArrow.addEventListener('click', goPreviousSlide);
+rightArrow.addEventListener('click', goNextSlide);
 
 
 
